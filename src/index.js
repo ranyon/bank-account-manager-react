@@ -2,11 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Router from "./Router";
 import * as serviceWorker from "./serviceWorker";
+import {Provider} from 'react-redux'
+import Store from './components/store'
 
 const App = (
+  <Provider store ={Store}>
   <React.StrictMode>
     <Router />
   </React.StrictMode>
+  </Provider>
 );
 
 ReactDOM.render(App, document.getElementById("root"));
