@@ -1,18 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import {DeleteAccount } from "./Actions"
 
-const AccountInfo = ({
-  id,
-  account_type,
-  account_name,
-  account_number,
-  bank_name,
-  bank_branch,
-  deleteAccount
-}) => {
-  const removeAccount = () => {
+const AccountInfo = ({id, account_type,account_name,account_number,bank_name,bank_branch,deleteAccount}) => {
+
+  const removeAccount = (event) => {
     deleteAccount(id);
+    
   };
+
+ 
+
   return (
     <div className="card">
       <header className="card-header">
@@ -40,6 +39,16 @@ const AccountInfo = ({
                 <th>Account number</th>
                 <td>{account_number}</td>
               </tr>
+
+              <tr>
+                <th>Account Type</th>
+                <td>{account_type}</td>
+              </tr>
+
+              <tr>
+                <th>Identification Number</th>
+                <td>{id}</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -56,4 +65,8 @@ const AccountInfo = ({
   );
 };
 
-export default AccountInfo;
+const mapDispatchToProps= {
+    deleteAccount : DeleteAccount 
+}
+
+export default connect (null, mapDispatchToProps) (AccountInfo);
