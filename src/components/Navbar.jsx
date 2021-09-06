@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./nav.css"
 
 const Navbar = () => {
   return (
@@ -13,25 +14,15 @@ const Navbar = () => {
           <NavLink className="navbar-item" to="/">
             <strong>ACCOUNT MANAGER</strong>
           </NavLink>
-          <a
-            role="button"
-            className="navbar-burger burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+      
         </div>
-        <div id="navbarBasicExample" className="navbar-menu">
+        <div id="navbarBasicExample" className="navbar-start">
           <div className="navbar-start">
-            <NavLink className="navbar-item" to="/add-account">
-              Add account
+            <NavLink className="navbar-item add_account" to="/add-account">
+             <button> Add account  <i class="fas fa-plus"></i></button> 
             </NavLink>
-            <NavLink className="navbar-item" to="/">
-              See accounts
+            <NavLink className="navbar-item see_accounts" to="/">
+             <button>See accounts   <i class="fas fa-eye"></i></button> 
             </NavLink>
           </div>
         </div>
